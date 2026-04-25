@@ -1,0 +1,14 @@
+sources:
+  - name: modelisation_sources
+    database: carteldeladata
+    schema: modelisation_sources
+    tables:
+      - name: calendrier_months
+      - name: car_hires
+      - name: car_rental_companies
+      - name: hotels
+      - name: organisations
+      - name: rooms
+      - name: teams
+      - name: users
+      
