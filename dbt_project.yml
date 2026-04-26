@@ -40,4 +40,3 @@ models:
   dbt_musculation:
     modelisation:
         +materialized: table
-        +schema: helton_jordao
