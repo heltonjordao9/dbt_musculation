@@ -1,21 +1,43 @@
-
 version: 2
-
 models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
-
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+  - name: dim_corpo_employee
+    description: "table des employes avec leur organisation"
+    columns:
+      - name: user_id
+        description: "id de l'utilisateur"
+        tests:
+          - unique
+          - not_null
+  - name: fact_travel_car_booking
+    description: "reservations de voitures"
+    columns:
+      - name: booking_reference
+        description: "reference de la reservation"
+        tests:
+          - not_null
+  - name: fact_travel_hotel_booking
+    description: "reservations d hotels"
+    columns:
+      - name: booking_reference
+        description: "reference de la reservation"
+        tests:
+          - unique
+          - not_null
+  - name: fact_travel_income
+    description: "revenus par jour pour les voyages"
+    columns:
+      - name: day
+        tests:
+          - not_null
+  - name: fact_corpo_subscription_income
+    description: "revenus des abonnements par organisation"
+    columns:
+      - name: organisation_id
+        tests:
+          - not_null
+  - name: fact_income_monthly
+    description: "revenus totaux par mois"
+    columns:
+      - name: month
+        tests:
+          - not_null
